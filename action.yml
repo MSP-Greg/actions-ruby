@@ -1,0 +1,22 @@
+name: 'Current MinGW Ruby Installation and MSYS2 Update'
+description: 'Install current MinGW Rubies and update & add packages to MSYS2'
+author: 'MSP-Greg'
+inputs:
+  base:
+    description: 'value of update refreshes gcc tools'
+    default: ''
+  mingw:
+    description: 'mingw packages to install, spaced delimited list'
+    default: ''
+  msys2:
+    description: 'msys2 packages to install, spaced delimited list'
+    default: ''
+  msys2-loc:
+    description: 'base location of MSYS2 install'
+    default: 'C:\hostedtoolcache\windows\Ruby\2.6.3\x64\msys64'
+  ruby-version:
+    description: 'Ruby version, formated as 2.6.x (ruby-head is 9.9.x)'
+    default: '2.6.x'
+runs:
+  using: 'node12'
+  main: 'lib/main.js'
