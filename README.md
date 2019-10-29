@@ -3,7 +3,8 @@
 ### Usage
 
 The following runs jobs using current versions of Ruby 2.4, 2.5 and 2.6, along with Ruby master.  It updates the gcc tools, and installs openssl & ragel.
-```
+
+```yaml
 runs-on: 'windows-latest'
 strategy:
   matrix:
@@ -18,7 +19,8 @@ steps:
 ```
 
 The following runs jobs using current versions of Ruby 2.4, 2.5 and 2.6, along with Ruby master.  Other than adjusting the path for Ruby extension building, nothing is done to MSYS2.
-```
+
+```yaml
 runs-on: 'windows-latest'
 strategy:
   matrix:
@@ -67,4 +69,4 @@ For reference, see [MSP-Greg/github-actions-ruby-info](https://github.com/MSP-Gr
 
 ### Why master?
 
-Since the Ruby versions may change (think Christmas),using master means that use in CI doesn't need to change version every year... 
+Since the Ruby versions may change (think Christmas),using master means that use in CI doesn't need to change version every year...
