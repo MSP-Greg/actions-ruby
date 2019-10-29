@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ruby: [ '2.4.x', '2.5.x', '2.6.x', '9.9.x' ]
+        ruby: [ '2.3.x', '2.4.x', '2.5.x', '2.6.x', '9.9.x' ]
     steps:
     - name: checkout
       uses: actions/checkout@v1
@@ -29,4 +29,8 @@ jobs:
     - name: Ruby Info
       run:  |
         ruby -v
-        ridk version
+        $abi_vers = &ruby.exe -e "STDOUT.write RUBY_VERSION"
+        if ($abi_vers -ge '2.4.0') {
+          ruby -e "gv = RbConfig::CONFIG['CC_VERSION_MESSAGE'][/[^\n]+/]; puts 'Built With:  ' + gv"
+          ridk version
+        }

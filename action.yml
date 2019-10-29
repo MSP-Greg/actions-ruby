@@ -16,7 +16,7 @@ inputs:
     default: 'C:\hostedtoolcache\windows\Ruby\2.6.3\x64\msys64'
   ruby-version:
     description: 'Ruby version, formated as 2.6.x (ruby-head is 9.9.x)'
-    default: '2.6.x'
+    default: ''
 runs:
   using: 'node12'
   main: 'lib/main.js'

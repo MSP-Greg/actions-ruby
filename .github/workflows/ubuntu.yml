@@ -1,4 +1,4 @@
-name: actions-ruby update MSYS2
+name: actions-ruby ubuntu
 
 on:
   push:
@@ -12,11 +12,11 @@ jobs:
   build:
     name: >-
       Ruby: ${{ matrix.ruby }}
-    runs-on: 'windows-latest'
+    runs-on: 'ubuntu-latest'
     strategy:
       fail-fast: false
       matrix:
-        ruby: [ '2.4.x', '2.5.x', '2.6.x', '9.9.x' ]
+        ruby: [ '2.3.x', '2.4.x', '2.5.x', '2.6.x' ]
     steps:
     - name: checkout
       uses: actions/checkout@v1
@@ -24,13 +24,5 @@ jobs:
       uses: MSP-Greg/actions-ruby@master
       with:
         ruby-version: ${{ matrix.ruby }}
-        base: update
-        mingw: openssl
-        msys2: bison
-    - name: List MinGW packages
-      run:  pacman -Q
     - name: Ruby Info
-      run:  |
-        ruby -v
-        ruby -e "gv = RbConfig::CONFIG['CC_VERSION_MESSAGE'][/[^\n]+/]; puts 'Built With:  ' + gv"
-        ridk version
+      run:  ruby -v
