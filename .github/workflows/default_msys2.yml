@@ -34,3 +34,10 @@ jobs:
           ruby -e "gv = RbConfig::CONFIG['CC_VERSION_MESSAGE'][/[^\n]+/]; puts 'Built With:  ' + gv"
           ridk version
         }
+    - name: Where is?
+      run:  |
+        write-host ''
+        write-host "----------------------- openssl"; where.exe openssl.exe
+        write-host "----------------------- make"   ; where.exe make.exe
+        write-host "----------------------- gcc"    ; where.exe gcc.exe
+        write-host "----------------------- ruby"   ; where.exe ruby.exe
