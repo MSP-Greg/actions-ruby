@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ruby: [ '2.3.x', '2.4.x', '2.5.x', '2.6.x' ]
+        ruby: [ '2.4.x', '2.5.x', '2.6.x' ]
     steps:
     - name: checkout
       uses: actions/checkout@v1
