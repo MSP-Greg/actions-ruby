@@ -19,7 +19,7 @@ jobs:
         ruby: [ '2.4.x', '2.5.x', '2.6.x' ]
     steps:
     - name: checkout
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
     - name: Install Ruby, update MSYS2
       uses: MSP-Greg/actions-ruby@master
       with:
