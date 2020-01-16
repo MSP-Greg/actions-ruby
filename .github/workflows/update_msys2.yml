@@ -12,19 +12,31 @@ jobs:
       matrix:
         ruby: [ '2.4.x', '2.5.x', '2.6.x', '2.7.x', '9.9.x' ]
     steps:
-    - name: Install Ruby, update MSYS2
-      uses: MSP-Greg/actions-ruby@master
-      with:
-        ruby-version: ${{ matrix.ruby }}
-        base: update
-        mingw: openssl
-        msys2: bison
-    - name: List MinGW packages
-      run:  pacman -Q
-    - name: Ruby Info
-      run:  |
-        ruby -v
-        ruby -e "gv = RbConfig::CONFIG['CC_VERSION_MESSAGE'][/[^\n]+/]; puts 'Built With:  ' + gv"
-        ridk version
-    - name: Where is?
-      run:  ./where_is.ps1
+
+      - name: Install Ruby, update MSYS2
+        uses: MSP-Greg/actions-ruby@master
+        with:
+          ruby-version: ${{ matrix.ruby }}
+          base: update
+          mingw: openssl ragel
+          msys2: bison
+
+      - name: List MinGW packages
+        run:  pacman -Q
+
+      - name: Ruby Info
+        run:  |
+          ruby -v
+          ruby -e "gv = RbConfig::CONFIG['CC_VERSION_MESSAGE'][/[^\n]+/]; puts 'Built With:  ' + gv"
+          ridk version
+
+      - name: where check
+        run: |
+          # show where
+          Write-Host
+          $where = 'gcc.exe', 'ragel.exe', 'make.exe', 'bison.exe', 'libcrypto-1_1-x64.dll', 'libssl-1_1-x64.dll'
+          foreach ($e in $where) {
+            $rslt = where.exe $e 2>&1 | Out-String
+            if ($rslt.contains($e)) { Write-Host $rslt }
+            else { Write-Host "`nCan't find $e" }
+          }
