@@ -13,7 +13,7 @@ inputs:
     default: ''
   msys2-loc:
     description: 'base location of MSYS2 install'
-    default: 'C:\hostedtoolcache\windows\Ruby\2.6.5\x64\msys64'
+    default: 'C:\hostedtoolcache\windows\Ruby\2.7.0\x64\msys64'
   ruby-version:
     description: 'Ruby version, formated as 2.6.x (ruby-head is 9.9.x)'
     default: ''
