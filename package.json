@@ -1,0 +1,28 @@
+{
+  "name": "actions-ruby",
+  "version": "1.0.0",
+  "description": "For use with Windows Ruby CI, mingw & mswin master builds",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js",
+    "package": "ncc build index.js -o dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MSP-Greg/actions-ruby.git"
+  },
+  "keywords": [
+    "actions",
+    "ruby",
+    "setup",
+    "windows",
+    "mingw",
+    "mswin"
+  ],
+  "author": "MSP-Greg",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.2",
+    "@actions/tool-cache": "^1.0.3"
+  }
+}
