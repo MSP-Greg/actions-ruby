@@ -159,11 +159,11 @@ const openssl = async () => {
       await exec.exec('C:\\ProgramData\\Chocolatey\\bin\\choco install --no-progress openssl')
       fs.renameSync('C:\\Program Files\\OpenSSL-Win64', 'C:\\openssl-win')
     }
-  } else if (rubyABIVers == '2.4.0') {
+  } else if (rubyABIVers === '2.4.0') {
     const openssl_24 = `https://dl.bintray.com/larskanis/rubyinstaller2-packages/${prefix.trim()}openssl-1.0.2.t-1-any.pkg.tar.xz`
     const openssl_24_path = await tc.downloadTool(openssl_24)
     await exec.exec(`pacman.exe -Udd --noconfirm --noprogressbar ${openssl_24_path}`)
-  } else if (rubyABIVers <= '2.3.0') {
+  } else if (rubyABIVers <= '2.4') {
     const openssl_23 = 'http://dl.bintray.com/oneclick/OpenKnapsack/x64/openssl-1.0.2j-x64-windows.tar.lzma'
     const openssl_23_path = await tc.downloadTool(openssl_23)
     fs.mkdirSync('C:\\openssl-win')

@@ -27,6 +27,7 @@ jobs:
         run:  |
           ruby -v
           ruby -e "gv = RbConfig::CONFIG.fetch('CC_VERSION_MESSAGE', ' ')[/[^\n]+/]; puts 'Built With:  ' + gv"
+          openssl.exe version
 
       - name: List MinGW packages
         run:  pacman.exe -Q
