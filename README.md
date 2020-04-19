@@ -1,4 +1,14 @@
-## MSP-Greg/actions-ruby  2019-12-28
+## MSP-Greg/actions-ruby  2020-04-19
+
+___
+
+**This action is deprecated.**  Suggested replacement actions:
+
+[ruby/setup-ruby](https://github.com/ruby/setup-ruby) - use for installation of Ruby builds
+
+[MSP-Greg/setup-ruby-pkgs](https://github.com/MSP-Greg/setup-ruby-pkgs) - use when compile dependencies are needed
+
+___
 
 ### Brief Summary
 
